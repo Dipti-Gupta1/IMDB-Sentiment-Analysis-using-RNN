@@ -48,26 +48,26 @@ if user_input is not None:
         sentiments = []
         scores = []
 
-    for review in input_df['review']:
-        preprocess_rev = preprocess_text(review)
-        prediction = model.predict(preprocess_rev)
-        sentiment = 'positive' if prediction >= 0.5 else 'negative'
-        sentiments.append(sentiment)
+        for review in input_df['review']:
+            preprocess_rev = preprocess_text(review)
+            prediction = model.predict(preprocess_rev)
+            sentiment = 'positive' if prediction >= 0.5 else 'negative'
+            sentiments.append(sentiment)
 
 
-    input_df['sentiment'] = prediction
+        input_df['sentiment'] = prediction
 
 
-    buffer = io.BytesIO()
-    input_df.to_csv(buffer, index=False)
-    buffer.seek(0)
+        buffer = io.BytesIO()
+        input_df.to_csv(buffer, index=False)
+        buffer.seek(0)
 
-    st.download_button(
-            label="Download Predictions as CSV",
-            data=buffer,
-            file_name="sentiment_predictions.csv",
-            mime="text/csv"
-        )
+        st.download_button(
+                label="Download Predictions as CSV",
+                data=buffer,
+                file_name="sentiment_predictions.csv",
+                mime="text/csv"
+            )
 else:
     st.write("Error: The uploaded CSV file must contain a 'review' column.")
    
