@@ -43,7 +43,8 @@ user_input = st.file_uploader(label='Upload CSV file', type ='csv',accept_multip
 
 if user_input is not None:
     input_df = pd.read_csv(user_input)
-    if 'review' in pd.columns:
+
+    if 'review' in input_df.columns:
         sentiments = []
         scores = []
 
