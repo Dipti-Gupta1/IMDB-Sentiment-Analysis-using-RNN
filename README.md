@@ -37,3 +37,6 @@ This project is a sentiment analysis tool built using a Recurrent Neural Network
 4. Interact with the model by uploading a CSV file containing movie reviews.
 
 
+Link to STreamlit app https://imdb-sentiment-analysis-using-rnn-rnn.streamlit.app/
+
+
