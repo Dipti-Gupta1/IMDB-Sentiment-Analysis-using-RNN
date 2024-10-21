@@ -51,11 +51,14 @@ if user_input is not None:
         for review in input_df['review']:
             preprocess_rev = preprocess_text(review)
             prediction = model.predict(preprocess_rev)
+            score = prediction[0][0]
             sentiment = 'positive' if prediction >= 0.5 else 'negative'
             sentiments.append(sentiment)
+            scores.append(score)
 
 
         input_df['sentiment'] = sentiments
+        input_df['prob'] = scores
 
 
         buffer = io.BytesIO()
