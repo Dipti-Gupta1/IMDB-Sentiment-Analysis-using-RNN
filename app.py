@@ -55,7 +55,7 @@ if user_input is not None:
             sentiments.append(sentiment)
 
 
-        input_df['sentiment'] = prediction
+        input_df['sentiment'] = sentiments
 
 
         buffer = io.BytesIO()
