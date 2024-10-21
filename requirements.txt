@@ -1,0 +1,12 @@
+pandas
+
+matplotlib
+
+numpy
+scikit-learn
+tensorflow
+tensorboard
+streamlit
+gensim
+
+openpyxl
